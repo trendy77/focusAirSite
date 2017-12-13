@@ -1,0 +1,81 @@
+html
+	head
+		title Products
+		
+		style
+			body { font-family: Verdana; font-size: 13px; background: #eee;}
+	
+			h1 { font-size: 22px; color: #464646; }
+			h2 { font-size: 18px; }
+			h3 { font-size: 14px; }
+	
+			a { color: #C2575B; text-decoration: none; }
+			a:hover { color: #F76F76; }
+
+	body
+		h1 Products
+
+		p Clean and Classy!
+
+		h2 Text and Comments
+		p Text inside <em>paragraph</em> tag
+		p
+			| Multi
+			| Line
+		p.
+			Another way for large
+			bodies of text!
+
+		// HTML Comments visible in HTML source
+		//- Invisible comments - Jade specific
+		// block comments
+			| this piece of text won't be visible.
+			| as this is part of the HTML block comments.
+
+		h2 IDs and Classes
+
+		#content
+			p.description `p` with a class of description inside a `div` with an id of content. You can simply omit the div btw.
+
+		h2 Attributes
+		// for boolean attributes you can pass true/false or omit them
+		// Multi lines ?
+		// No commas ?
+		input(type="checkbox"
+			name="terms"
+			checked)
+
+		h2 Nesting
+		// We will do some nesting now
+			| Lesser nesting ? ok .. cool!
+
+		ul#menu
+			li: a(href="#target1", title="Home") Home
+			li: a(href="#target2", title="Contact") Contact
+
+		h2 Variables and Escaping
+		// Ok .. time to learn the real stuff now!
+			| Let's say you passed some variables to this template
+			| from your Node.js code. Since we don't have a node.js setup
+			| we're going to set the variables inside here.
+			| yes! you can define variables in jade templates!
+
+			| want more text in the heading ?
+			| arrays ? objects ?
+
+			| One thing to remember though. Jade will html escape
+			| the contents of \#{}. If you want unescaped content
+			| use \!{}
+			| Also notice i escaped all interpolation tokens in this
+			| block comment, else Jade would think that it needs to
+			| do some string interpolation and throw errors!
+
+			| That's all for now! In the next part I am going to
+			| show you some other features like conditionals, mixins
+			| and loops.
+
+		my_var = {name: 'Prod1', type: 'indoor'}
+		my_var2 = {name: 'Prod2', type: 'outdoor'}
+	
+
+
